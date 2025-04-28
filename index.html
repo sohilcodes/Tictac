@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe Game</title>
+  <style>
+    body {
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+    #startBtn {
+      margin-top: 100px;
+      padding: 15px 30px;
+      font-size: 24px;
+      background-color: #6a0dad;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #game {
+      display: none;
+      margin-top: 30px;
+    }
+    .row {
+      display: flex;
+    }
+    .cell {
+      width: 80px;
+      height: 80px;
+      margin: 5px;
+      background-color: #220044;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ff00ff, 0 0 20px #0000ff;
+      user-select: none;
+    }
+    #ad-container {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<button id="startBtn">Start Game</button>
+
+<div id="game">
+  <div class="row">
+    <div class="cell" onclick="makeMove(this)"></div>
+    <div class="cell" onclick="makeMove(this)"></div>
+    <div class="cell" onclick="makeMove(this)"></div>
+  </div>
+  <div class="row">
+    <div class="cell" onclick="makeMove(this)"></div>
+    <div class="cell" onclick="makeMove(this)"></div>
+    <div class="cell" onclick="makeMove(this)"></div>
+  </div>
+  <div class="row">
+    <div class="cell" onclick="makeMove(this)"></div>
+    <div class="cell" onclick="makeMove(this)"></div>
+    <div class="cell" onclick="makeMove(this)"></div>
+  </div>
+</div>
+
+<!-- Ad Section -->
+<div id="ad-container">
+  <script async="async" data-cfasync="false" src="//pl26506313.profitableratecpm.com/1e5e2e2859aaf5bc4835668489726a9c/invoke.js"></script>
+  <div id="container-1e5e2e2859aaf5bc4835668489726a9c"></div>
+</div>
+
+<script>
+  let currentPlayer = 'X';
+
+  function startGame() {
+    document.getElementById('startBtn').style.display = 'none';
+    document.getElementById('game').style.display = 'block';
+  }
+
+  function makeMove(cell) {
+    if (cell.textContent === '') {
+      cell.textContent = currentPlayer;
+      cell.style.color = currentPlayer === 'X' ? '#00f0ff' : '#ff00ff';
+      currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    }
+  }
+
+  document.getElementById('startBtn').addEventListener('click', startGame);
+</script>
+
+</body>
+</html>
